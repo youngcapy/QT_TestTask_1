@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsModal</class>
+ <widget class="QDialog" name="SettingsModal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>391</width>
+    <height>293</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>220</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="sourceDelete">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>150</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Удалять входные файлы?</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="repeatMode">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>220</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Выберите режим сохранения файла при повторении имени в целевой директории</string>
+   </property>
+   <property name="placeholderText">
+    <string>При повторении имени</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="timeBased">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>120</y>
+     <width>151</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Работа по таймеру?</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="xorTextBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Введите 8 байт для операции XOR над подаваемым файлом</string>
+   </property>
+   <property name="placeholderText">
+    <string>Введите 8 байт для XOR</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="checkTimer">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>110</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Таймер принимает значения в секундах от 0 до 59 включительно</string>
+   </property>
+   <property name="currentSection">
+    <enum>QDateTimeEdit::Section::SecondSection</enum>
+   </property>
+   <property name="displayFormat">
+    <string>ss</string>
+   </property>
+   <property name="time">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="fileMaskBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Ввод маски осуществляется без точки(пример &quot;txt&quot;)</string>
+   </property>
+   <property name="placeholderText">
+    <string>Маска читаемого файла</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dirChoiceButton">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>70</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Данная кнопка вызывает модальное окно выбора директории для сохранения файлов</string>
+   </property>
+   <property name="text">
+    <string>Выберите директорию</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="pathToRead">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>70</y>
+     <width>161</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Путь до директории...</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="byteEntryCb">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>180</y>
+     <width>351</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>Ввод в байтовой шестнадцатеричной форме(символы от 0 до f. Регистронезависимо.)</string>
+   </property>
+   <property name="text">
+    <string>Ввод в байтах</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SettingsModal</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SettingsModal</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
